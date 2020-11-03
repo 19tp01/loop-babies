@@ -1,8 +1,10 @@
+const path = require("path")
+
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
+    title: `Loop Babies`,
+    description: `The official websites of the loop babies`,
+    author: `@Terry Pi`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -25,6 +27,43 @@ module.exports = {
         theme_color: `#663399`,
         display: `minimal-ui`,
         icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+      },
+    },
+    {
+      resolve: "gatsby-plugin-react-svg",
+      options: {
+        rule: {
+          include: /icons/,
+        },
+      },
+    },
+    {
+      resolve: `gatsby-plugin-react-i18next`,
+      options: {
+        path: `${__dirname}/locales`,
+        languages: [`en`, `zh`],
+        defaultLanguage: `en`,
+
+        // you can pass any i18next options
+        // pass following options to allow message content as a key
+        i18nextOptions: {
+          interpolation: {
+            escapeValue: false, // not needed for react as it escapes by default
+          },
+          keySeparator: false,
+          nsSeparator: false,
+        },
+        pages: [
+          {
+            matchPath: "/:lang?/blog/:uid",
+            getLanguageFromPath: true,
+            excludeLanguages: ["es"],
+          },
+          {
+            matchPath: "/preview",
+            languages: ["en"],
+          },
+        ],
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality

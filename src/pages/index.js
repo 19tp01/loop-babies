@@ -1,22 +1,51 @@
 import React from "react"
-import { Link } from "gatsby"
+import { Link, Trans, useTranslation } from "gatsby-plugin-react-i18next"
 
 import Layout from "../components/layout"
 import Image from "../components/image"
+import Form from "../components/form"
 import SEO from "../components/seo"
 
-const IndexPage = () => (
-  <Layout>
-    <SEO title="Home" />
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-      <Image />
-    </div>
-    <Link to="/page-2/">Go to page 2</Link> <br />
-    <Link to="/using-typescript/">Go to "Using TypeScript"</Link>
-  </Layout>
-)
+const IndexPage = () => {
+  const { t } = useTranslation()
+  return (
+    <Layout>
+      <SEO title={t("Home")} />
+      <section className="intro">
+        <div className="title">
+          <div className="logo-box">
+            <span className="circle cavin-face">
+              <Image filename="Cavin.png" />
+            </span>
+            <span className="circle claire-face">
+              <Image filename="Claire.png" />
+            </span>
+            <span className="circle terry-face">
+              <Image filename="Terry.png" />
+            </span>
+          </div>
+          <h1 className="logo-text">{t("TITLE")}</h1>
+        </div>
+        <a href="#submit">
+          <div className="scroll-box">
+            <div className="arrow-container">
+              <div className="arrow"></div>
+            </div>
+            <p>
+              <Trans>Submit a song</Trans>
+            </p>
+          </div>
+        </a>
+      </section>
+      <section className="submit-song">
+        <a name="submit"></a>
+        <div className="margin-bottom margin-top center">
+          <h1>The Loop Babies will play literally any song for you</h1>
+        </div>
+        <Form />
+      </section>
+    </Layout>
+  )
+}
 
 export default IndexPage

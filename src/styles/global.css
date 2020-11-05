@@ -609,19 +609,14 @@ svg {
 
 .navWrapper {
   color: white;
-<<<<<<< HEAD
   width: 100%;
   background: white;
   position: absolute;
   display: block;
-  
+
   left: 50%;
   transform: translate(-50%, 0);
   z-index: 10;
-=======
-  display: block;
-  position: absolute;
->>>>>>> master
   align-items: center;
   justify-content: space-between;
 }

@@ -13,83 +13,79 @@ const Header = ({ siteTitle }) => {
         background: `#fff`,
       }}
     >
-      <div
-        style={{
-          margin: `0 auto`,
-          maxWidth: 960,
-          padding: `0.5rem 0.5rem`,
-        }}
-        className="navWrapper"
-      >
-        <ul>
-          <li>
-            <Link to="/">
-              <Refresh />
-            </Link>
-          </li>
-          <li>
-            <h1>
-              <Link to="/about" className="head">
-                About
-              </Link>
-            </h1>
-          </li>
-          <li>
-            <h1>
-              <Link to="/" className="head">
-                Contact
-              </Link>
-            </h1>
-          </li>
-          <li>
-            <h1>
-              <Link to="/" className="head">
-                Schedule
-              </Link>
-            </h1>
-          </li>
-          <li>
-            <h1>
-              <a
-                className="head"
-                target="_blank"
-                rel="noreferrer"
-                href="https://www.instagram.com/loop.babies/"
-              >
-                Instagram
-              </a>
-            </h1>
-          </li>
-        </ul>
-        <ul className="languages">
+      <div className="white-padding">
+        <div
+          style={{
+            margin: `0 auto`,
+            maxWidth: 960,
+            padding: `0rem 0`,
+          }}
+          className="navWrapper"
+        >
+          <Link to="/"></Link>
+          <input class="menu-btn" type="checkbox" id="menu-btn" />
+          <label class="menu-icon" for="menu-btn">
+            <span class="navicon"></span>
+          </label>
           {language === "en" ? (
-            <li>
-              <a
-                className="head"
-                href="#"
-                onClick={e => {
-                  e.preventDefault()
-                  changeLanguage("zh")
-                }}
-              >
-                中文
-              </a>
-            </li>
+            <a
+              className="head languages"
+              href="#"
+              onClick={e => {
+                e.preventDefault()
+                changeLanguage("zh")
+              }}
+            >
+              中文
+            </a>
           ) : (
-            <li>
-              <a
-                className="head"
-                href="#"
-                onClick={e => {
-                  e.preventDefault()
-                  changeLanguage("en")
-                }}
-              >
-                ENGLISH
-              </a>
-            </li>
+            <a
+              className="head languages"
+              href="#"
+              onClick={e => {
+                e.preventDefault()
+                changeLanguage("en")
+              }}
+            >
+              ENGLISH
+            </a>
           )}
-        </ul>
+          <ul className="menu">
+            <li>
+              <h1>
+                <Link to="/about" className="head">
+                  About
+                </Link>
+              </h1>
+            </li>
+            <li>
+              <h1>
+                <Link to="/" className="head">
+                  Contact
+                </Link>
+              </h1>
+            </li>
+            <li>
+              <h1>
+                <Link to="/" className="head">
+                  Schedule
+                </Link>
+              </h1>
+            </li>
+            <li>
+              <h1>
+                <a
+                  className="head"
+                  target="_blank"
+                  rel="noreferrer"
+                  href="https://www.instagram.com/loop.babies/"
+                >
+                  Instagram
+                </a>
+              </h1>
+            </li>
+          </ul>
+        </div>
       </div>
     </header>
   )

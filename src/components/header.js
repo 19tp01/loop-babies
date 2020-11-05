@@ -1,8 +1,8 @@
 import { Link, useI18next } from "gatsby-plugin-react-i18next"
 import PropTypes from "prop-types"
 import React from "react"
-import Instagram from "../icons/instagram.svg"
 import Refresh from "../icons/refresh.svg"
+import Globe from "../icons/globe.svg"
 
 const Header = ({ siteTitle }) => {
   const { languages, changeLanguage, language } = useI18next()
@@ -36,7 +36,7 @@ const Header = ({ siteTitle }) => {
                 changeLanguage("zh")
               }}
             >
-              中文
+              中文 <Globe />
             </a>
           ) : (
             <a
@@ -47,7 +47,7 @@ const Header = ({ siteTitle }) => {
                 changeLanguage("en")
               }}
             >
-              ENGLISH
+              ENGLISH <Globe />
             </a>
           )}
           <ul className="menu">

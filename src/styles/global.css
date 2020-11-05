@@ -597,8 +597,7 @@ pre tt:after {
 
 svg {
   position: relative;
-  top: 50%;
-  transform: translate(0%, -50%);
+  vertical-align: top;
 }
 
 .white-padding {

@@ -597,8 +597,7 @@ pre tt:after {
 
 svg {
   position: relative;
-  top: 50%;
-  transform: translate(0%, -50%);
+  vertical-align: top;
 }
 
 .white-padding {
@@ -610,10 +609,6 @@ svg {
 
 .navWrapper {
   color: white;
-<<<<<<< HEAD
-  display: block;
-  position: absolute;
-=======
   width: 100%;
   background: white;
   position: absolute;
@@ -621,7 +616,6 @@ svg {
   left: 50%;
   transform: translate(-50%, 0);
   z-index: 10;
->>>>>>> 7c5134aa57dec4ecba646511d28de22e89dcceb8
   align-items: center;
   justify-content: space-between;
 }
@@ -797,7 +791,6 @@ svg {
   width: 34vw;
   max-width: 13rem;
   padding-bottom: 3rem;
-  opacity: 1;
   transform: translate(-0.3rem, 0);
 }
 

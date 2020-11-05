@@ -13,7 +13,7 @@ const Header = ({ siteTitle }) => {
         background: `#fff`,
       }}
     >
-      <div>
+      <div className="white-padding">
         <div
           style={{
             margin: `0 auto`,

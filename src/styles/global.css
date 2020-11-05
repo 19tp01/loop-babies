@@ -580,7 +580,9 @@ pre tt:after {
 }
 
 .head {
-  font-size: 17px;
+  display: block;
+  font-size: 18px;
+  padding: 10px 10px;
   line-height: 1;
   color: black;
   text-decoration: none;
@@ -589,22 +591,50 @@ pre tt:after {
 
 @media (max-width: 600px) {
   .head {
-    font-size: 15px;
+    font-size: 16px;
   }
 }
 
 svg {
   position: relative;
   top: 50%;
-  transform: translate(0%, -60%);
+  transform: translate(0%, -50%);
+}
+
+.white-padding {
+  width: 100%;
+  height: 38px;
+  display: block;
+  background: white;
 }
 
 .navWrapper {
   color: white;
+<<<<<<< HEAD
   display: block;
   position: absolute;
+=======
+  width: 100%;
+  background: white;
+  position: absolute;
+  display: block;
+  left: 50%;
+  transform: translate(-50%, 0);
+  z-index: 10;
+>>>>>>> 7c5134aa57dec4ecba646511d28de22e89dcceb8
   align-items: center;
   justify-content: space-between;
+}
+
+.top-logo {
+  display: inline-block;
+}
+
+.languages {
+  display: inline-block;
+  float: right;
+  padding: 10px 10px;
+  vertical-align: top;
 }
 
 .navWrapper h1 {
@@ -615,13 +645,108 @@ svg {
   font-size: inherit;
 }
 
-.navWrapper > ul {
-  display: inline-flex;
+.navWrapper ul {
+  margin: 0;
+  padding: 0;
   list-style-type: none;
+  overflow: hidden;
+}
+.navWrapper ul > li:first-of-type {
+  border-top: 1px solid #222;
 }
 
-.navWrapper li + li {
-  margin-left: 0.8rem;
+.navWrapper li {
+  border-bottom: 1px solid #333;
+}
+
+.navWrapper .menu {
+  clear: both;
+  max-height: 0;
+  transition: max-height 0.2s ease-out;
+}
+
+.navWrapper .menu-icon {
+  cursor: pointer;
+  display: inline-block;
+  padding: 22px 0px 10px 10px;
+  margin-left: 7px;
+  position: relative;
+  user-select: none;
+}
+
+.navWrapper .menu-icon .navicon {
+  background: #333;
+  display: block;
+  height: 2px;
+  position: relative;
+  transition: background 0.2s ease-out;
+  width: 22px;
+}
+
+.navWrapper .menu-icon .navicon:before,
+.navWrapper .menu-icon .navicon:after {
+  background: #333;
+  content: "";
+  display: block;
+  height: 100%;
+  position: absolute;
+  transition: all 0.2s ease-out;
+  width: 100%;
+}
+
+.navWrapper .menu-icon .navicon:before {
+  top: 6px;
+}
+
+.navWrapper .menu-icon .navicon:after {
+  top: -6px;
+}
+
+/* menu btn */
+
+.navWrapper .menu-btn {
+  display: none;
+}
+
+.navWrapper .menu-btn:checked ~ .menu {
+  max-height: 240px;
+}
+
+.navWrapper .menu-btn:checked ~ .menu-icon .navicon {
+  background: none;
+}
+
+.navWrapper .menu-btn:checked ~ .menu-icon .navicon:before {
+  transform: rotate(-45deg);
+}
+
+.navWrapper .menu-btn:checked ~ .menu-icon .navicon:after {
+  transform: rotate(45deg);
+}
+
+.navWrapper .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:before,
+.navWrapper .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:after {
+  top: 0;
+}
+
+@media (min-width: 35em) {
+  .navWrapper li {
+    float: left;
+    border: none;
+  }
+
+  .navWrapper ul > li:first-of-type {
+    border-top: 0px solid #222;
+  }
+
+  .navWrapper .menu {
+    clear: none;
+    float: left;
+    max-height: none;
+  }
+  .navWrapper .menu-icon {
+    display: none;
+  }
 }
 
 .intro {
@@ -629,7 +754,7 @@ svg {
   position: relative;
   align-items: center;
   justify-content: center;
-  height: calc(100vh - 43px);
+  height: 100vh;
 }
 
 .title {
@@ -638,8 +763,8 @@ svg {
   left: 50%;
   transform: translate(-50%, -60%);
   width: 100%;
-  overflow: hidden;
-  padding: 8rem 0rem 7rem;
+  overflow: visible;
+  padding: 15vh 0rem 12vh;
   background-image: url("../images/spinning-arrows.png");
   background-repeat: no-repeat;
   background-position: center;

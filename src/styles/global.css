@@ -601,7 +601,8 @@ svg {
 
 .navWrapper {
   color: white;
-  display: flex;
+  display: block;
+  position: absolute;
   align-items: center;
   justify-content: space-between;
 }

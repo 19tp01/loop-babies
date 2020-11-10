@@ -39,7 +39,7 @@ const Form = props => {
 
   return (
     <Fragment>
-      <form onSubmit={e => onSubmit(e)}>
+      <form className="gform" onSubmit={e => onSubmit(e)}>
         <label for="songTitle">
           {t("FORM.SONG_TITLE")}
           <input

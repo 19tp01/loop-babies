@@ -1,16 +1,33 @@
 {
-  "Home": "Casa",
-  "Page two": "Página dos",
-  "NOT FOUND": "NO ENCONTRADO",
-  "Hi people": "Hola gente",
-  "Go to page 2": "Ir a la página 2",
-  "Go back to the homepage": "Volver a la página de inicio",
-  "404: Not found": "404: No encontrado",
-  "Now go build something great.": "Ahora ve a construir algo grande.",
-  "Welcome to your new Gatsby site.": "Bienvenido a su nuevo sitio de Gatsby.",
-  "Welcome to page 2": "Bienvenido a la página 2",
-  "You just hit a route that doesn't exist... the sadness.": "Acabas de llegar a una ruta que no existe... la tristeza.",
-  "Go to ignored page": "Ir a la página ignorada",
-  "TITLE": "循環寶寶",
-  "Submit a song": "點歌"
+  "INDEX": {
+    "TITLE": "循環寶寶",
+    "REQUEST_LINK": "點歌"
+  },
+  "FORM": {
+    "TITLE": "循環寶寶為您帶來全世界全部的歌",
+    "SONG_TITLE": "歌名",
+    "ARTIST": "歌手",
+    "YOUR_NAME": "你的名字",
+    "ADD_A_MESSAGE": "留言",
+    "SUBMIT": "提交",
+    "OPTIONAL": "(可不填)"
+  },
+  "HEADER": {
+    "ABOUT": "關於我們",
+    "REQUEST": "點歌",
+    "SCHEDULE": "演出時間",
+    "CONTACT": "練習",
+    "INSTAGRAM": "IG"
+  },
+  "ABOUT": {
+    "TITLE": "關於我們",
+    "DESCRIPTION": "循環寶寶是從哪裡來的呢?關於他們無人知曉, 只知道他們會突然帶著循環器出現,開始演奏經典或是很火的音樂。寶寶佑方跟寶寶筠筠負責唱歌, 寶寶泰睿負責製作。循環寶寶不僅多才多藝還超級可愛, 他們也跟其他寶寶一樣很愛討關愛, 所以表演的時候大家都要認真聽, 跟你最大的支持, 寶寶們會很開心喔喔喔喔。 P.S. 他們也很喜歡餅乾"
+  },
+  "SCHEDULE": {
+    "TITLE": "演出時間"
+  },
+  "404: Not found": "404: Not found",
+  "Home": "首頁",
+  "NOT FOUND": "NOT FOUND",
+  "You just hit a route that doesn't exist... the sadness.": "You just hit a route that doesn't exist... the sadness."
 }

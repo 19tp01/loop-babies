@@ -1,7 +1,10 @@
 import React, { Fragment, useState } from "react"
+import useForm from "react-hook-form"
 import axios from "axios"
+import { Link, useTranslation } from "gatsby-plugin-react-i18next"
 
 const Form = props => {
+  const { t } = useTranslation()
   const [formData, setFormData] = useState({
     songTitle: "",
     artist: "",
@@ -38,7 +41,7 @@ const Form = props => {
     <Fragment>
       <form onSubmit={e => onSubmit(e)}>
         <label for="songTitle">
-          Song Title
+          {t("FORM.SONG_TITLE")}
           <input
             type="text"
             name="songTitle"
@@ -48,7 +51,7 @@ const Form = props => {
             required
           />
         </label>
-        <label>Artist</label>
+        <label>{t("FORM.ARTIST")}</label>
         <input
           type="text"
           name="artist"
@@ -57,24 +60,24 @@ const Form = props => {
           onChange={e => onChange(e)}
           required
         />
-        <label>Your Name</label>
+        <label>{t("FORM.YOUR_NAME")}</label>
         <input
           type="text"
           name="name"
-          placeholder="(optional)"
+          placeholder={t("FORM.OPTIONAL")}
           value={name}
           onChange={e => onChange(e)}
         />
-        <label for="message">Add a message</label>
+        <label for="message">{t("FORM.ADD_A_MESSAGE")}</label>
         <textarea
           id="message"
           name="message"
-          placeholder="(optional)"
+          placeholder={t("FORM.OPTIONAL")}
           value={message}
           onChange={e => onChange(e)}
         ></textarea>
-        <div className="center">
-          <button type="submit">Submit</button>
+        <div className="align-center">
+          <button type="submit">{t("FORM.SUBMIT")}</button>
         </div>
       </form>
     </Fragment>

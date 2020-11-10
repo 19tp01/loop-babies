@@ -24,23 +24,21 @@ const IndexPage = () => {
               <Image filename="Terry.png" />
             </span>
           </div>
-          <h1 className="logo-text">{t("TITLE")}</h1>
+          <h1 className="logo-text">{t("INDEX.TITLE")}</h1>
         </div>
-        <a href="#submit">
+        <a href="/#submit">
           <div className="scroll-box">
             <div className="arrow-container">
               <div className="arrow"></div>
             </div>
-            <p>
-              <Trans>Submit a song</Trans>
-            </p>
+            <p>{t("INDEX.REQUEST_LINK")}</p>
           </div>
         </a>
       </section>
       <section className="submit-song">
-        <a name="submit"></a>
-        <div className="margin-bottom margin-top center">
-          <h1>The Loop Babies will play literally any song for you</h1>
+        <a name="submit" id="submit" />
+        <div className="margin-bottom margin-top align-center">
+          <h1>{t("FORM.TITLE")}</h1>
         </div>
         <Form />
       </section>

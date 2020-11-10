@@ -50,7 +50,7 @@ module.exports = {
           interpolation: {
             escapeValue: false, // not needed for react as it escapes by default
           },
-          keySeparator: false,
+          keySeparator: ".",
           nsSeparator: false,
         },
         pages: [

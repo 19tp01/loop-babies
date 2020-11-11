@@ -1,28 +1,21 @@
 import React, { Fragment, useState } from "react"
-import useForm from "react-hook-form"
+import { useForm } from "react-hook-form"
 import axios from "axios"
-import { Link, useTranslation } from "gatsby-plugin-react-i18next"
+import { Link, useI18next, useTranslation } from "gatsby-plugin-react-i18next"
+import Checkmark from "../icons/checkmark.svg"
 
 const Form = props => {
   const { t } = useTranslation()
-  const [formData, setFormData] = useState({
-    songTitle: "",
-    artist: "",
-    name: "",
-    message: "",
-  })
+  const { languages, changeLanguage, language } = useI18next()
 
-  const { songTitle, artist, name, message } = formData
+  const { register, handleSubmit, errors, reset } = useForm()
+  const [message, setMessage] = useState("")
 
-  const onChange = e =>
-    setFormData({ ...formData, [e.target.name]: e.target.value })
-
-  const onSubmit = async e => {
-    e.preventDefault()
+  const onSubmit = data => {
     // Creates new FormData object and adds keys
-    const formObj = new FormData()
-    Object.keys(formData).forEach(key => formObj.append(key, formData[key]))
 
+    const formObj = new FormData()
+    Object.keys(data).forEach(key => formObj.append(key, data[key]))
     try {
       axios({
         method: "post",
@@ -32,6 +25,17 @@ const Form = props => {
         headers: { "Content-Type": "multipart/form-data" },
       })
       console.log("submit success")
+      if (language === "en") {
+        setMessage(
+          `${data.songTitle} by ${data.artist}? Of course we know that one. We'll get to it as soon as we can.`
+        )
+      } else {
+        setMessage(
+          `${data.artist} 的 ${data.songTitle}？我們當然會那首歌。我們經快為您表演。`
+        )
+      }
+
+      reset()
     } catch (err) {
       console.log(err)
     }
@@ -39,15 +43,22 @@ const Form = props => {
 
   return (
     <Fragment>
-      <form className="gform" onSubmit={e => onSubmit(e)}>
+      {message && (
+        <div className="align-center alert">
+          <Checkmark style={{ width: "30px", height: "30px" }} />
+          <h2 style={{ padding: "5px 0 10px" }}>{t("FORM.SUBMITTED")}</h2>
+          <p>{message}</p>
+        </div>
+      )}
+
+      <form onSubmit={handleSubmit(onSubmit)}>
         <label for="songTitle">
           {t("FORM.SONG_TITLE")}
           <input
             type="text"
             name="songTitle"
             placeholder="Isn't She Lovely"
-            value={songTitle}
-            onChange={e => onChange(e)}
+            ref={register}
             required
           />
         </label>
@@ -56,8 +67,7 @@ const Form = props => {
           type="text"
           name="artist"
           placeholder="Stevie Wonder"
-          value={artist}
-          onChange={e => onChange(e)}
+          ref={register}
           required
         />
         <label>{t("FORM.YOUR_NAME")}</label>
@@ -65,16 +75,14 @@ const Form = props => {
           type="text"
           name="name"
           placeholder={t("FORM.OPTIONAL")}
-          value={name}
-          onChange={e => onChange(e)}
+          ref={register}
         />
         <label for="message">{t("FORM.ADD_A_MESSAGE")}</label>
         <textarea
           id="message"
           name="message"
           placeholder={t("FORM.OPTIONAL")}
-          value={message}
-          onChange={e => onChange(e)}
+          ref={register}
         ></textarea>
         <div className="align-center">
           <button type="submit">{t("FORM.SUBMIT")}</button>

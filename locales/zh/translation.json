@@ -10,14 +10,16 @@
     "YOUR_NAME": "你的名字",
     "ADD_A_MESSAGE": "留言",
     "SUBMIT": "提交",
+    "SUBMITTED": "點歌成功！",
     "OPTIONAL": "(可不填)"
   },
   "HEADER": {
     "ABOUT": "關於我們",
     "REQUEST": "點歌",
     "SCHEDULE": "演出時間",
-    "CONTACT": "練習",
-    "INSTAGRAM": "IG"
+    "CONTACT": "聯絡",
+    "INSTAGRAM": "IG",
+    "CONTACT_US": "跟我們聯繫:"
   },
   "ABOUT": {
     "TITLE": "關於我們",

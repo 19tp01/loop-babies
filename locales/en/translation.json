@@ -10,6 +10,7 @@
     "YOUR_NAME": "Your Name",
     "ADD_A_MESSAGE": "Add a message",
     "SUBMIT": "Submit",
+    "SUBMITTED": "SONG SUBMITTED",
     "OPTIONAL": "(optional)"
   },
   "HEADER": {
@@ -17,7 +18,8 @@
     "REQUEST": "request",
     "SCHEDULE": "schedule",
     "CONTACT": "contact",
-    "INSTAGRAM": "instagram"
+    "INSTAGRAM": "instagram",
+    "CONTACT_US": "CONTACT US:"
   },
   "ABOUT": {
     "TITLE": "ABOUT US",
